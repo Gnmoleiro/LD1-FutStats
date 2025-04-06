@@ -1,4 +1,4 @@
-# Futstats <img src="./proj/FutStats/FutStats/imagens/futstats_logo_back.jpeg" alt="Logo" width="180" align="right">
+# Futstats <img src="./proj/FutStats/FutStats/imagens/logo_backback.jpeg" alt="Logo" width="180" align="right">
 
 <br>
 O Futstats é uma plataforma web para consulta e análise de estatísticas e detalhes do mundo do futebol. Atravez da mesma podes aceder a
@@ -31,6 +31,10 @@ Acesso a informações detalhadas sobre :
 O Futstats é uma aplicação que integra diversas tecnologias para oferecer uma
 experiência completa aos usuários. O projeto é dividido em duas partes principais:
 
+![Estrutura-do-Projeto](./proj/FutStats/FutStats/imagens/estrutura.png)
+
+[Base de Dados](./proj/FutStats/FutStats/imagens/base_de_dados.png)
+
 ### Front-end
 
 O front-end é responsável pela apresentação e interação com o usuário. Desenvolvido em **React Native**, ele é
@@ -58,8 +62,6 @@ As rotas principais são:
 - **Rota de Resultados:** `GET /results`
 - **Rota de Estatísticas:** `GET /statistics`
 
-
-![Estrutura-do-Projeto](./proj/FutStats/FutStats/imagens/estrutura.png)
 
 ## Instalação
 
@@ -93,7 +95,7 @@ no "Login", selecionado o "New Login".
 Quando for aberto este painel será necessario selécionar a oção do SQL Server authentication
 e desmarcar a opção selécionada opor defauth.
 (Nota: O servidor já vem com um user selécionado no código, para o correto funcionamento do mesmo, é
-aconcelhado inserir as mesmas credenciais aqui inseridas.
+aconcelhado inserir as mesmas credenciais aqui inseridas.)
 
 
 | Login Name | Password    |
@@ -116,6 +118,16 @@ E conectar com as respetivas credências inseridas.
 máquina local que difere. E será necessário escolher a porta associada por defauth do seu computador, referente ao SQl)
 
 ![Credenciais](./proj/FutStats/FutStats/imagens/credenciais.png)
+
+Por último basta criar a base de dados com o seguinte comando:
+```
+CREATE DATABASE FutStats
+```
+![Credenciais](./proj/FutStats/FutStats/imagens/comando1sql.png)
+
+E executar o ficheiro SQL script que se encontra ./proj/FutStats/FutStats/database/script.sql
+
+![Credenciais](./proj/FutStats/FutStats/imagens/comando2sql.png)
 
 ## Uso
 
@@ -199,4 +211,4 @@ Trabalho realizado por:
 - [Jorge Castro] nº 210094
 - [Guilherme Moleiro] nº 2024349
 
-![ISTEC](./proj/pages/imgs/ISTEC.png)
+![ISTEC](./proj/FutStats/FutStats/imagens/ISTEC.png)
