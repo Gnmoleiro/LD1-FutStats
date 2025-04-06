@@ -33,7 +33,7 @@ experiência completa aos usuários. O projeto é dividido em duas partes princi
 
 ![Estrutura-do-Projeto](./proj/FutStats/FutStats/imagens/estrutura.png)
 
-[Base de Dados](./proj/FutStats/FutStats/imagens/base_de_dados.png)
+![Base-de-Dados](./proj/FutStats/FutStats/imagens/base_de_dados.png)
 
 ### Front-end
 
