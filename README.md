@@ -173,7 +173,7 @@ Para isso, basta utilizar as seguintes credenciais:
 
 ### Página de Registo
 
-![Registo](./proj/FutStats/FutStats/imagens/registo.png)
+![Registo](./proj/FutStats/FutStats/imagens/registro.png)
 
 ### Página de Administrador
 
