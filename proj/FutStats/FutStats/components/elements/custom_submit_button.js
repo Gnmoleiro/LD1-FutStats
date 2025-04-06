@@ -1,20 +1,19 @@
 import React, { useRef } from 'react';
 import { TouchableOpacity, Text, StyleSheet, Animated, Platform } from 'react-native';
 
-// Cria uma versão animada do TouchableOpacity
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
 
 const SubmitButton = ({ 
   loading, 
   handleSubmit, 
-  loadingText = 'Entrando...', 
-  defaultText = 'Entrar' 
+  loadingText = 'Registrando...', 
+  defaultText = 'Registrar' 
 }) => {
   const scaleAnim = useRef(new Animated.Value(1)).current;
 
   const handleHoverIn = () => {
     Animated.timing(scaleAnim, {
-      toValue: 1.05,
+      toValue: 1.03,  
       duration: 200,
       useNativeDriver: true,
     }).start();
@@ -49,12 +48,14 @@ const SubmitButton = ({
 
 const styles = StyleSheet.create({
   button: {
-    marginTop: 10,
+    marginTop: 8,     
     backgroundColor: '#23722a',
-    padding: 10,
-    borderRadius: 25,
+    padding: 8,            
+    borderRadius: 20,      
     alignItems: 'center',
-    width: '90%',
+    width: '60%',    
+    height: 42,    
+    justifyContent: 'center', 
     alignSelf: 'center',
   },
   buttonDisabled: {
@@ -63,7 +64,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#fff',
-    fontSize: 20,
+    fontSize: 14,        
     fontWeight: 'bold',
   },
 });

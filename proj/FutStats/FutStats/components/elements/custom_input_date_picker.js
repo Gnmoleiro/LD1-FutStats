@@ -25,15 +25,16 @@ const DataInput = ({ placeholder, value, onChangeText, error, style }) => {
   };
   
   const hideDatePicker = () => {
-    setIsFocused(false);
     setDatePickerVisibility(false);
-    if (!selectedDate) onChangeText?.("");
   };
 
   const handleConfirm = (date) => {
     if (date) {
       setSelectedDate(date);
       onChangeText?.(formatDateToDDMMYYYY(date));
+      setIsFocused(true);
+    } else {
+      setIsFocused(false);
     }
     hideDatePicker();
   };
@@ -45,7 +46,7 @@ const DataInput = ({ placeholder, value, onChangeText, error, style }) => {
       { 
         translateY: animatedValue.interpolate({
           inputRange: [0, 1],
-          outputRange: [15, -15]
+          outputRange: [10, -5]
         })
       },
       { 
@@ -77,7 +78,11 @@ const DataInput = ({ placeholder, value, onChangeText, error, style }) => {
         style={[
           styles.placeholderLabel,
           labelTransform,
-          { color: labelColor }
+          { 
+            color: labelColor,
+            backgroundColor: (isFocused || value),
+            paddingHorizontal: 2
+          }
         ]}
       >
         {placeholder}
@@ -88,17 +93,17 @@ const DataInput = ({ placeholder, value, onChangeText, error, style }) => {
           <DatePicker
             selected={selectedDate}
             onChange={handleConfirm}
-            onBlur={hideDatePicker}
-            onFocus={showDatePicker}
+            onBlur={() => setIsFocused(false)}
+            onFocus={() => setIsFocused(true)}
             dateFormat="dd/MM/yyyy"
             maxDate={new Date()}
             showYearDropdown
             scrollableYearDropdown
             yearDropdownItemNumber={100}
             className="react-datepicker-custom"
-            placeholderText="--/--/----"
-            popperClassName="date-picker-popper"
-            calendarClassName="date-picker-calendar"
+            placeholderText=""
+            popperPlacement="auto"
+            showPopperArrow={false}
             customInput={
               <TouchableOpacity 
                 style={[styles.inputContainer, style]} 
@@ -106,9 +111,7 @@ const DataInput = ({ placeholder, value, onChangeText, error, style }) => {
                 activeOpacity={0.8}
               >
                 <Text style={[styles.dateText, { color: inputColor }]}>
-                  {selectedDate 
-                    ? formatDateToDDMMYYYY(selectedDate) 
-                    : (isFocused ? "--/--/----" : "")}
+                  {selectedDate ? formatDateToDDMMYYYY(selectedDate) : ""}
                 </Text>
               </TouchableOpacity>
             }
@@ -122,9 +125,7 @@ const DataInput = ({ placeholder, value, onChangeText, error, style }) => {
             activeOpacity={0.8}
           >
             <Text style={[styles.dateText, { color: inputColor }]}>
-              {selectedDate 
-                ? formatDateToDDMMYYYY(selectedDate) 
-                : (isFocused ? "--/--/----" : "")}
+              {selectedDate ? formatDateToDDMMYYYY(selectedDate) : ""}
             </Text>
           </TouchableOpacity>
 
@@ -133,7 +134,10 @@ const DataInput = ({ placeholder, value, onChangeText, error, style }) => {
             mode="date"
             display="default"
             onConfirm={handleConfirm}
-            onCancel={hideDatePicker}
+            onCancel={() => {
+              setIsFocused(false);
+              hideDatePicker();
+            }}
             maximumDate={new Date()}
           />
         </>
@@ -148,9 +152,12 @@ const DataInput = ({ placeholder, value, onChangeText, error, style }) => {
 const formatDateToDDMMYYYY = (date) => {
   if (!date) return "";
   try {
-    return date.toLocaleDateString("pt-BR");
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
   } catch (error) {
-    console.error("Erro ao formatar data:", error);
+    console.error("Error formatting date:", error);
     return "";
   }
 };
@@ -158,27 +165,24 @@ const formatDateToDDMMYYYY = (date) => {
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    marginVertical: 12,
-    paddingTop: 18,
+    marginVertical: 3,
+    paddingTop: 5,
     position: 'relative',
   },
   placeholderLabel: {
-    fontSize: 20,
-    paddingHorizontal: 2,
+    fontSize: 14,
     position: "absolute",
-    left: 5,
-    zIndex: 2,
-    backgroundColor: "transparent",
+    zIndex: 1,
     pointerEvents: 'none',
   },
   inputContainer: {
-    height: 45,
+    height: 40,
     justifyContent: 'flex-end',
     paddingBottom: 5,
     marginHorizontal: 5,
   },
   dateText: { 
-    fontSize: 16,
+    fontSize: 14,
     paddingTop: Platform.select({ web: 8, default: 0 }),
     minHeight: 24,
   },

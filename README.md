@@ -1,4 +1,4 @@
-# Futstats <img src="./proj/pages/imgs/futstats_logo_back.jpeg" alt="Logo" width="180" align="right">
+# Futstats <img src="./proj/FutStats/FutStats/imagens/futstats_logo_back.jpeg" alt="Logo" width="180" align="right">
 
 <br>
 O Futstats é uma plataforma web para consulta e análise de estatísticas e detalhes do mundo do futebol. Atravez da mesma podes aceder a
@@ -59,7 +59,7 @@ As rotas principais são:
 - **Rota de Estatísticas:** `GET /statistics`
 
 
-![Estrutura-do-Projeto](./pages/imgs/futstats_logo_back.png)
+![Estrutura-do-Projeto](./proj/FutStats/FutStats/imagens/estrutura.png)
 
 ## Instalação
 
@@ -71,24 +71,24 @@ necessário configurar um Login com representado nas seguintes imagens.
 
 Inicialmente, apos a instalação do SQL Server Management Studio, irá se deparar com a seguinte interface.
 
-<img src="./proj/pages/imgs/sqlsever1.png" alt="sqlsever1" width="180">
+<img src="./proj/FutStats/FutStats/imagens/sqlserver1.png" alt="sqlsever1">
 
 Onde bastará permir o botão escrito "Connect".
 
-<img src="./proj/pages/imgs/sqlsever2.png" alt="sqlsever2" width="180" align="right">
+<img src="./proj/FutStats/FutStats/imagens/sqlserver2.png" alt="sqlsever2">
 
 De seguida será necessário permir botão direito na sua máquina local e selecionar "Properties"
 
-<img src="./proj/pages/imgs/sqlsever3.png" alt="sqlsever3" width="180">
+<img src="./proj/FutStats/FutStats/imagens/sqlserver3.png" alt="sqlsever3">
 
 Quando for aberto este painel será necessario ir para a aba "Security" e selecionar a área circulada e clicar "OK".
 
-<img src="./proj/pages/imgs/sqlsever4.png" alt="sqlsever4" width="180">
+<img src="./proj/FutStats/FutStats/imagens/sqlserver4.png" alt="sqlsever4">
 
 Opós estes passos, seguiremos para a aba "Security" e "Login" no menu lateral, e clicamos com o botão direito
 no "Login", selecionado o "New Login". 
 
-<img src="./proj/pages/imgs/sqlsever5.png" alt="sqlsever5" width="180">
+<img src="./proj/FutStats/FutStats/imagens/sqlserver5.png" alt="sqlsever5">
 
 Quando for aberto este painel será necessario selécionar a oção do SQL Server authentication
 e desmarcar a opção selécionada opor defauth.
@@ -101,21 +101,21 @@ aconcelhado inserir as mesmas credenciais aqui inseridas.
 | user       | 1234        |
 
 
-<img src="./proj/pages/imgs/sqlsever6.png" alt="sqlsever6" width="180">
+<img src="./proj/FutStats/FutStats/imagens/sqlserver6.png" alt="sqlsever6">
 
 Para continuar, será necessário ir ate á aba "Server Roles" e selecionar todas as opções de permisões de acesso.
 
-<img src="./proj/pages/imgs/sqlsever7.png" alt="sqlsever7" width="180">
+<img src="./proj/FutStats/FutStats/imagens/sqlserver7.png" alt="sqlsever7">
 
 Agora basta desconectar do SQL e conectar nas respétivas "fichas com cruz e sem cruz".
 
-<img src="./proj/pages/imgs/sqlsever8.png" alt="sqlsever8" width="180">
+<img src="./proj/FutStats/FutStats/imagens/sqlserver8.png" alt="sqlsever8">
 
 E conectar com as respetivas credências inseridas.
 (Nota: Vale lembrar que é necessário copiar o "Server Name" para ser alterardo no código o nome da
 máquina local que difere. E será necessário escolher a porta associada por defauth do seu computador, referente ao SQl)
 
-![Credenciais](./pages/imgs/credenciais.png)
+![Credenciais](./proj/FutStats/FutStats/imagens/credenciais.png)
 
 ## Uso
 
@@ -157,29 +157,36 @@ Para isso, basta utilizar as seguintes credenciais:
 
 ### Página de Login
 
-![Login](./pages/imgs/login.png)
+![Login](./proj/FutStats/FutStats/imagens/login.png)
 
 ### Página de Registo
 
-![Registo](./pages/imgs/registo.png)
+![Registo](./proj/FutStats/FutStats/imagens/registo.png)
 
 ### Página de Administrador
 
-![Admin](./pages/imgs/admin.png)
+![Admin](./proj/FutStats/FutStats/imagens/adm.png)
 
 ### Página de Equipas
 
-![Equipas](./pages/imgs/teams.png)
+![Equipas](./proj/FutStats/FutStats/imagens/esquipa.png)
 
 ### Página de Jogadores
 
-![Jogadores](./pages/imgs/players.png)
+![Jogadores](./proj/FutStats/FutStats/imagens/jogador.png)
 
 
 ### Página de Tabelas
 
-![Tabelas](./pages/imgs/tables.png)
+![Tabelas](./proj/FutStats/FutStats/imagens/tabela_inicial.png)
 
+### Página do Perfil
+
+![Perfil](./proj/FutStats/FutStats/imagens/perfil.png)
+
+### Vídeo Final de Demonstração
+
+[![Vídeo de Demonstração](./proj/FutStats/FutStats/imagens/login.png)](https://youtu.be/Yak37LqXT-Q)
 
 ## Resumo Final
 

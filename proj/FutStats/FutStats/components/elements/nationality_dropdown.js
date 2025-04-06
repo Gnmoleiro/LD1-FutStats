@@ -172,7 +172,7 @@ const defaultNationalities = [
 ];
 
 const NationalityDropdown = ({ value, onSelect, error }) => {
-  // Agora a opção selecionada é encontrada pelo id
+
   const [nationalities] = useState(defaultNationalities);
   const selectedOption = nationalities.find(option => option.value === value) || null;
 
@@ -195,7 +195,7 @@ const styles = StyleSheet.create({
     color: '#ff4444',
     fontSize: 14,
     textAlign: 'center',
-    marginTop: 10,
+    marginTop: 5,
   }
 });
 

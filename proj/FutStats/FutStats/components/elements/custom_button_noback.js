@@ -33,9 +33,7 @@ const CustomButtonNoBack = ({ buttonText, handleClick }) => {
 };
 
 const styles = StyleSheet.create({
-  pressable: {
-    // Caso queira adicionar estilos ao Pressable
-  },
+
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -46,19 +44,17 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    marginBottom: 30,
     color: '#333',
   },
   button: {
     backgroundColor: 'transparent',
     paddingVertical: 12,
-    paddingHorizontal: 30,
-    marginBottom: 10,
+width:'auto',
     alignItems: 'center',
   },
   buttonText: {
     color: 'rgba(255, 255, 255, 0.8)',
-    fontSize: 16,
+    fontSize: 13,
     fontWeight: '400',
     textAlign: 'center',
   },
